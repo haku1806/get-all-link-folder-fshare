@@ -6,8 +6,10 @@
 ###
 
 from base64 import encode
-import requests
 import datetime
+import os
+
+import requests
 
 def is_file(data):
     if data['size'] == 0 and data['pid'] == None:
@@ -55,6 +57,12 @@ if __name__ == '__main__':
     list_link = []
     print(folder_id)
     file_name = datetime.datetime.now().strftime("data\\%Y%m%d_%H%M%S.txt")
+    # Create folder data if not exists
+    try:
+        os.mkdir(f'data')
+    except:
+        pass
+    
     get_link(folder_id)
     print("Done. Vui long kiem tra file " + file_name)
     
