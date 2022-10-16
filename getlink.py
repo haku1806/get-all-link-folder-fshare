@@ -1,5 +1,5 @@
 ###
-# Get link fshare
+# Get link fshare in folder
 # 
 # Auth: haku1806
 #  
@@ -37,7 +37,7 @@ def get_link(foledr_id, folder_path = "", page = 1, per_page = 50):
                 get_link(item['linkcode'], data['current']['path'])
             else:
                 out_put = f"https://www.fshare.vn/file/{item['linkcode']}|{item['name']}|{data['current']['path']}"
-                print(out_put)
+                # print(out_put)
                 with open(file_name, 'a', encoding="utf-8") as f:
                     f.write(f"{out_put}\n")
         if 'next' in data['_links']:

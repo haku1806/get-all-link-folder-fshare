@@ -8,4 +8,7 @@ pip install -r requirements.txt
 ```
 
 ## Chạy file getlink.py
+```shell
+python getlink.py
+```
 ### Nhập link folder cần lấy link
